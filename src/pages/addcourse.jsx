@@ -22,7 +22,7 @@ const AddCourse = () => {
       try {
         const token = localStorage.getItem('token');
         console.log("token",token);
-          const response = await fetch('https://ideamagix-three.vercel.app/api/admin/courses', {
+          const response = await fetch('https://timetutor-backend.vercel.app/api/admin/courses', {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

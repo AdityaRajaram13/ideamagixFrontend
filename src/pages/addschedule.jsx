@@ -21,7 +21,7 @@ const addschedule = () => {
   const fetchCourses = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://ideamagix-three.vercel.app/api/admin/all-course', {
+      const response = await fetch('https://timetutor-backend.vercel.app/api/admin/all-course', {
         headers: {
           'Authorization': `Bearer ${token}`, 
           'Content-Type': 'application/json' 
@@ -39,7 +39,7 @@ const addschedule = () => {
   const fetchInstructors = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('https://ideamagix-three.vercel.app/api/admin/instructors', {
+      const response = await fetch('https://timetutor-backend.vercel.app/api/admin/instructors', {
         headers: {
           'Authorization': `Bearer ${token}`, 
           'Content-Type': 'application/json' 

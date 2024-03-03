@@ -9,7 +9,7 @@ function InstructorSchedule() {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token'); 
-        const response = await fetch('https://ideamagix-three.vercel.app/api/my-lectures', {
+        const response = await fetch('https://timetutor-backend.vercel.app/api/my-lectures', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json' 
