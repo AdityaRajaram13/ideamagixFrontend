@@ -4,7 +4,7 @@
   to = "/index.html"
   status = 200
 
-# Additional Settings (Optional)
+# Additional Settings
 [build]
-  command = "npm run build"  # Specify the build command for your project
-  publish = "dist"          # Specify the directory to publish (where your built files are located)
+  command = "npm run build" 
+  publish = "dist"         
