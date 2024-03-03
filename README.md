@@ -1,4 +1,4 @@
-# TIMETUTOR
+# TIMETUTOR (Deploy Link: https://main--ideamagixschedular.netlify.app/login)
 
 > TimeTuto is a comprehensive application designed to streamline the scheduling process for educational institutions. With TimeTutor, administrators have the capability to efficiently manage schedules for instructors, add courses, and oversee the entire scheduling workflow. Additionally, instructors can access their personalized schedules, ensuring they stay organized and informed about their upcoming lectures.
 
