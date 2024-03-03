@@ -46,7 +46,7 @@ To set up the backend of TimeTuto, follow these steps:
 
 1. Clone the repository from GitHub:
    ```bash
-   git clone https://github.com/AdityaRajaram13/ideamagix
+   git clone https://github.com/AdityaRajaram13/timetutorBackend
 
 2. Install dependecies:
    npm install
