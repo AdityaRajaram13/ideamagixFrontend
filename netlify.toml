@@ -1,3 +1,5 @@
+# Redirects and Rewrites Configuration for Netlify
+
 # Redirects
 [[redirects]]
   from = "/subdirectory/*"
@@ -10,3 +12,9 @@
   to = "/subdirectory"
   status = 200
 
+# Add more redirects or rewrites as needed...
+
+# Additional Settings (Optional)
+[build]
+  command = "npm run build"  # Specify the build command for your project
+  publish = "dist"          # Specify the directory to publish (where your built files are located)
