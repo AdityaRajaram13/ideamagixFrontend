@@ -58,7 +58,7 @@ const addschedule = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/admin/courses/schedule', {
+      const response = await fetch('https://ideamagix-three.vercel.app/api/admin/courses/schedule', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -91,12 +91,12 @@ const addschedule = () => {
     ) : (
     <div className="w-full max-w-md mx-auto border-2">
       <form onSubmit={handleSubmit} className="bg-white shadow-md border-2 rounded px-8 pt-6 pb-8 mb-4 mt-[20px]">
-        <h2 className="text-3xl font-bold mb-4 text-center text-gray-800 border-b-2 border-gray-300 pb-2">ADD COURSE</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center text-gray-800 border-b-2 border-gray-300 pb-2">ADD SCHEDULE</h2>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="course">
             Select Course:
           </label>
-          <select id="course" value={courseId} onChange={(e) => setCourseId(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          <select id="course" value={courseId} onChange={(e) => setCourseId(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required >
             <option value="">Select Course</option>
             {courses.map(course => (
               <option key={course._id} value={course._id}>{course.name}</option>
@@ -105,7 +105,7 @@ const addschedule = () => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="instructor" >Select Instructor:</label>
-          <select value={instructorId} onChange={(e) => setInstructorId(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          <select value={instructorId} onChange={(e) => setInstructorId(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required >
             <option value="">Select Instructor</option>
             {instructors.map(instructor => (
               <option key={instructor._id} value={instructor._id}>{instructor.username}</option>
@@ -123,12 +123,13 @@ const addschedule = () => {
             onChange={(e) => setDate(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             min={today}
+            required 
           />        </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="batch">
             Select Batch:
           </label>
-          <select id="batch" value={batch} onChange={(e) => setBatch(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          <select id="batch" value={batch} onChange={(e) => setBatch(e.target.value)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required >
             <option value="">Select Batch</option>
             <option value="Morning">Morning</option>
             <option value="Afternoon">Afternoon</option>

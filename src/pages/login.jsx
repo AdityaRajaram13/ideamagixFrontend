@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/authcontext';
-import instructor from './InstructorSchedule';
 import Loader from '../components/Loader'
 import { toast } from 'react-toastify';
 
@@ -35,7 +34,6 @@ const Login = () => {
                 navigate('/admin/dashboard');
             } else {
                 toast.error(data.message, { autoClose: 3000 });
-                console.error('Login failed:', data.message);
             }
         } catch (error) {
             console.error('Error occurred during login:', error);
@@ -43,9 +41,7 @@ const Login = () => {
             setLoading(false);
         }
     };
-    useEffect(() => {
-        console.log("loadingstart", loading);
-    }, [loading]);
+    
     
 
     return (
@@ -64,6 +60,7 @@ const Login = () => {
                 value={username} 
                 onChange={(e) => setUsername(e.target.value)} 
                 className="w-full px-4 py-2 text-white bg-transparent rounded-lg  border-2 border-blue-950  focus:outline-none focus:border-violet-500"
+                required 
               />
             </div>
             <div className="w-full px-2 mb-4">
@@ -74,7 +71,8 @@ const Login = () => {
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
                 className="w-full px-4 py-2 text-white bg-transparent rounded-lg  border-2 border-blue-950  focus:outline-none focus:border-violet-500"
-              />
+                required 
+             />
             </div>
           </div>
           <div className=" mt-4 flex">

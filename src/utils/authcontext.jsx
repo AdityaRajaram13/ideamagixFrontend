@@ -35,9 +35,7 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    useEffect(() => {
-        console.log('user', user);
-    }, [user]);
+  
 
     const login = (userData) => {
         setUser(userData);

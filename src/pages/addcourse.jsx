@@ -35,7 +35,9 @@ const AddCourse = () => {
               }),
           });
           const data = await response.json();
+          toast.success("Course added successfully");
       } catch (error) {
+          toast.error(data.message);
           console.error('Error creating course:', error);
       }
   };
@@ -53,6 +55,7 @@ const AddCourse = () => {
                         onChange={(e) => setName(e.target.value)}
                         className="border border-gray-300 rounded-md px-3 py-2 w-full"
                         placeholder="Enter course name"
+                        required 
                     />
                 </div>
                 <div className="mb-4">
@@ -62,6 +65,7 @@ const AddCourse = () => {
                         value={level}
                         onChange={(e) => setLevel(e.target.value)}
                         className="border border-gray-300 rounded-md px-3 py-2 w-full"
+                        required 
                     >
                         <option value="">Select level</option>
                         <option value="Beginner">Beginner</option>
@@ -86,6 +90,7 @@ const AddCourse = () => {
                         id="image"
                         onChange={handleFileChange}
                         className="border border-gray-300 rounded-md px-3 py-2 w-full"
+                        required
                     />
                 </div>
                 <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300" onClick={handleSubmit}>Add Course</button>

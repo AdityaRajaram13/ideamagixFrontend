@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loader from '../components/Loader';
 
 function InstructorSchedule() {
   const [lectures, setLectures] = useState([]);
@@ -7,12 +8,11 @@ function InstructorSchedule() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const token = localStorage.getItem('token'); // assuming you store the JWT token in localStorage
+        const token = localStorage.getItem('token'); 
         const response = await fetch('https://ideamagix-three.vercel.app/api/my-lectures', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json' 
-
           }
         });
         if (!response.ok) {
@@ -22,7 +22,7 @@ function InstructorSchedule() {
         setLectures(data.instructorLectures);
         setLoading(false);
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching data:',error);
       }
     };
 
@@ -33,8 +33,8 @@ function InstructorSchedule() {
     <div className="container mx-auto">
     <h2 className="text-3xl font-bold mb-4 text-center text-gray-800 border-b-2 border-gray-300 pb-2">Instructor Lecture Schedule</h2>
     {loading ? (
-      <p className="text-center text-gray-600">Loading...</p>
-    ) : lectures.length === 0 ? (
+<Loader/>
+   ) : lectures.length === 0 ? (
       <p className="text-center text-gray-600">No lectures scheduled</p>
     ) : (
       <div className="overflow-x-auto">
@@ -62,9 +62,7 @@ function InstructorSchedule() {
         </table>
       </div>
     )}
-  </div>
-  
-  
+  </div>    
   );
 }
 
