@@ -1,18 +1,8 @@
-# Redirects and Rewrites Configuration for Netlify
-
 # Redirects
 [[redirects]]
-  from = "/subdirectory/*"
-  to = "/subdirectory/index.html"
+  from = "/*"
+  to = "/index.html"
   status = 200
-
-# Rewrites
-[[redirects]]
-  from = "/subdirectory/index.html"
-  to = "/subdirectory"
-  status = 200
-
-# Add more redirects or rewrites as needed...
 
 # Additional Settings (Optional)
 [build]
