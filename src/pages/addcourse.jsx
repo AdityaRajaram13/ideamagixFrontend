@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {  toast } from 'react-toastify';
 
 const AddCourse = () => {
     const [name, setName] = useState('');
