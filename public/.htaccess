@@ -2,8 +2,6 @@
     RewriteEngine On
     RewriteBase /subdirectory
     RewriteRule ^index\.html$ - [L]   
-    # Skip rewriting for sw.js
-    RewriteRule ^sw\.js$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-l
