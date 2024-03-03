@@ -10,7 +10,7 @@ const adminshowlec = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/admin/allschedule', {
+        const response = await fetch('https://ideamagix-three.vercel.app/api/admin/allschedule', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
